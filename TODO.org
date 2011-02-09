@@ -41,11 +41,3 @@
 ** differences between ntp versions - what uses ephemeral ports
 ** distinguishing actual hosts mac addrs EUI-64?
 
-* logo: a stylized version of this:
-
- http://www.cr.nps.gov/history/online_books/butowsky5/images/astro4k1.jpg 
-
-* Referenced story:
-
-
-
