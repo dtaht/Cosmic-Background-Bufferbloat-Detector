@@ -1,0 +1,6 @@
+The Cosmic Background Bufferbloat Detector
+
+This is:
+
+An attempt to leverage the ntp protocol to detect bufferbloat by measuring the difference between origin and destination timestamps. 
+

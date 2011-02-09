@@ -1,0 +1,51 @@
+* Non ntp sources of timestamp info?
+  The usage of a timestamp to determine bufferbloat cuts across more
+  protocols than just NTP. Timestamping is a relatively new option, 
+  not widely implemented, but it might be visible at higher layers (http)   originating from several applications and operating systems.
+* Tshark parser
+  Perl has libraries that interface with libpcap. I'm inclined to use perl, but that's me. Parsing the ntp packet(s) accurately will take work. Perhaps we can leverage wireshark's parser somehow.
+* NTP patch
+  tshark is somewhat invasive and getting ntp to output the needed info directly would probably be better.
+
+* NTP stats parser(s)
+  it may be possible to parse the existing output of a ntp server/client's logs to get this information without patching.
+
+* SQL backend
+  Because postgres has a ip address type, I'd plan on using that, so we can cover ipv4 and ipv6.
+
+* SQL schema
+  Have to be careful about mismatches between ntp's idea of a timestamp
+  and postgresqls.
+
+* SQL queries
+** Natted sources
+** Non natted sources
+** Noise reduction
+** ???
+* Graphical output
+** Summary graph over large sample sets over 1,5 minute windows
+** scatterplot
+** comparison of real RTT times on off hours
+** Comparison with GEOIP data
+** comparison against backbone providers
+** comparison against the last mile data
+** non natted sources
+** Stratum I, Stratum II, Stratum III
+** comparison against other data - 
+*** a netflix download dataset
+*** a netanalyzer dataset
+*** Others?
+
+* Tough issues
+** statistical noise throughout the idea
+** differences between ntp versions - what uses ephemeral ports
+** distinguishing actual hosts mac addrs EUI-64?
+
+* logo: a stylized version of this:
+
+ http://www.cr.nps.gov/history/online_books/butowsky5/images/astro4k1.jpg 
+
+* Referenced story:
+
+
+
