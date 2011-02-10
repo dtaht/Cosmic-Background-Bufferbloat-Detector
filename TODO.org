@@ -1,3 +1,17 @@
+* Overview
+
+I need to write an overview. Please see related discussion on the bloat
+list on:
+
+https://lists.bufferbloat.net 
+
+and the thread on comp.protocols.time.ntp
+
+http://lists.ntp.org/pipermail/questions/2011-February/028577.html
+
+The crux of the idea, is that much like cosmic background radiation,
+the bufferbloat signal is in the noise that NTP currently rejects.
+
 * Parser
 ** Non ntp sources of timestamp info?
   The usage of a timestamp to determine bufferbloat cuts across more
@@ -24,6 +38,8 @@
 *** Non natted sources
 *** Noise reduction
 *** ???
+* ODBC 
+  Make sure the data can be looked at in a spreadsheet
 * Graphical output
 ** Summary graph over large sample sets over 1,5 minute windows
 ** scatterplot
@@ -41,6 +57,13 @@
 ** GD? Gnuplot? Gource? MRTG?
 
 * Tough issues
+** How to analyze tcp streams in context
+   We really don't want to keep lots of tcp data around..
+** Qdisc idea
+   There is a germ of an idea floating around in here involving a qdisc
+   that could detect TCP timestamp differences getting larger and larger.
+** Avoid sequence numbers
+   So different datasets can be merged - use sha1 hashes & pgcrypto
 ** statistical noise throughout the idea
 ** differences between ntp versions - what uses ephemeral ports
 ** distinguishing actual hosts mac addrs EUI-64?
